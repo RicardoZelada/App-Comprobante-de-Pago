@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobante de Pago</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="Css/style.css">
+
+</head>
+<body>
+    <main>
+        <section class="container-xl">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-sm-9">
+                    <nav class="container-lg text-center mt-3 bg-danger shadow-sm p-3 mb-5 rounded">
+                        <h2 class="fw-bold text-white">Generador Comprobante de Pago</h2>
+                    </nav>
+
+                    <div class="card mt-3">
+                        <div class="header">
+                            <h5 class="text-center p-2">Complete los siguientes campos</h5>
+                        </div>
+                    </div>
+                    <div class="div__alert">
+                    </div>
+                    <div class="card mt-2 shadow-sm p-1 mb-3 bg-body rounded"> 
+                        <form>
+                            <div class="body bg-light ">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control alumno" id="floatingInput">
+                                    <label for="floatingInput">Nombre del Alumno</label>
+                                </div>
+                                <div class="form-floating mt-2">
+                                    <input type="text" class="form-control pago" id="floatingInput"> 
+                                    <label for="floatingInput">Actividad de Pago</label>
+                                </div>
+
+                                <div class="d-grid gap-2 mt-2">
+                                    <button class="btn btn-primary" type="button" id="btn__enviar">Ingresar Datos</button>
+                                </div>
+                                <div class="d-grid gap-2 mt-2">
+                                    <button type="reset" class="btn btn-secondary" id="btn__limpiar">Limpiar Datos</button>
+                                </div>   
+                                                            
+                            </div>
+                        </form>   
+                    </div>
+                    <div class="div__result">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="Js/app.js"></script>
+</body>
+</html>
