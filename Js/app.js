@@ -30,7 +30,7 @@ btnAux_Generator.addEventListener('click', ()=>{
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
-        doc.text("Cancelado el: "+ fechahora());
+        doc.text("Cancelado el: "+ fechahora(), 10, 30);
         doc.text("Comprobante de Pago - 8voA", 20, 20);
         doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 40);
         doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 50);
@@ -40,21 +40,3 @@ btnAux_Generator.addEventListener('click', ()=>{
         doc.save(`Comprobante de Pago_${name_Alumno}.pdf`);
     }   
         });
-
-    /*
-    array_Error = [];
-
-    if (name_Alumno === ""){
-        array_Error.push("Ingrese nombre del alumno");
-    if (act_Pago === ""){
-        array_Error.push("ingrese pago");
-    }
-    if(array_Error.length === 0){
-            let registro={}
-            registro.nombre = name_Alumno;
-            registro.pago = act_Pago;
-        };
-
-        console.log(array_Error);
-        console.log(registro);
-    }*/
