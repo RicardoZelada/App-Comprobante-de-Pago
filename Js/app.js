@@ -9,8 +9,9 @@ function fechahora(){
         let informacion = document.querySelector(".date-time");
         informacion.classList.add("text-center","p-2","text-danger");
         informacion.textContent = `${fecha} - ${date}`;
+
+        return `${fecha} - ${date}`;
     }
-    fechahora();
     setInterval(fechahora, 1000);
 
 
@@ -31,10 +32,10 @@ btnAux_Generator.addEventListener('click', ()=>{
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
-        const datetime = fechahora();
-        console.log(datetime)
+        const datetime = fechahora(); //obtengo la fecha y hora de la funcion fechahora()
+        console.log(datetime);
 
-        doc.text("Cancelado el: "+ datetime, 20, 30);
+        doc.text("Cancelado el: " + datetime, 20, 30);
         doc.text("Comprobante de Pago - 8voA", 20, 20);
         doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 40);
         doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 50);
