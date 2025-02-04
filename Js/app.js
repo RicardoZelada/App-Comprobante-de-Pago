@@ -2,7 +2,7 @@
 function fechahora(){
     const hoy = new Date();
         const options = {year: 'numeric', month: 'long', day: 'numeric'};
-        const optionsdate = {hour: '2-digit', minute:'2-digit', second:'2-digit'};
+        const optionsdate = {hour: '2-digit', minute: '2-digit', second: '2-digit', hour24:false};
         const fecha = hoy.toLocaleDateString('es-ES', options);
         const date = hoy.toTimeString(optionsdate);
 
