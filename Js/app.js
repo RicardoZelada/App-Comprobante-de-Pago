@@ -2,9 +2,9 @@
 function fechahora(){
     const hoy = new Date();
         const options = {year: 'numeric', month: 'long', day: 'numeric'};
-        const optionsdate = {hour: '2-digit', minute: '2-digit', second: '2-digit', hour24:false, timeZoneName:'short'};
+        const optionsdate = {hour: '2-digit', minute: '2-digit', second: '2-digit'};
         const fecha = hoy.toLocaleDateString('es-ES', options);
-        const date = hoy.toTimeString(optionsdate);
+        const date = hoy.toLocaleTimeString(optionsdate, 'es-ES');
 
         let informacion = document.querySelector(".date-time");
         informacion.classList.add("text-center","p-2","text-danger");
