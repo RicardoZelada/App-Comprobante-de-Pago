@@ -28,12 +28,12 @@ btnAux_Generator.addEventListener('click', ()=>{
         console.log("Nombre del Alumno: " +name_Alumno);
         console.log("Actividad Cancelada: " +act_Pago);
 
+        const datetime = fechahora(); //obtengo la fecha y hora de la funcion fechahora()
+        console.log(datetime);
+
         // Crear un nuevo documento PDF
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF('p','mm','carta');
-
-        const datetime = fechahora(); //obtengo la fecha y hora de la funcion fechahora()
-        console.log(datetime);
 
         doc.setFont("Roboto", "bold");
         doc.setFontSize(16);
@@ -42,15 +42,17 @@ btnAux_Generator.addEventListener('click', ()=>{
         const pageWidth = doc.internal.pageSize.getWidth();  // Obtener el ancho de la página
         const textWidth = doc.getTextWidth(title);  // Obtener el ancho del texto
         const x = (pageWidth - textWidth) / 2;  // Calcular la posición para centrar el texto
-        const y =30;
+        const y = 30;
 
-        doc.text(title, x,y);
+        doc.text(title, x, y);
 
 
         doc.setFont("Roboto", "normal");
         doc.setFontSize(12);
         doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 40);
         doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 50);
+
+        doc.setFontSize(10);
         doc.text("Cancelado el: " + datetime, 20, 30);
 
 
