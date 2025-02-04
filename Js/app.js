@@ -6,12 +6,13 @@ function fechahora(){
         const fecha = hoy.toLocaleDateString('es-ES', options);
         const date = hoy.toLocaleTimeString('es-ES', optionsdate);
 
-        let informacion = document.querySelector(".date-time");
+        /*let informacion = document.querySelector(".date-time");
         informacion.classList.add("text-center","p-2","text-danger");
-        informacion.textContent = `${fecha} - ${date}`;
+        informacion.textContent = */
+        return `${fecha} - ${date}`;
     }
-    fechahora();
-    setInterval(fechahora, 1000);
+    /*fechahora();
+    setInterval(fechahora, 1000);*/
 
 
 const btnAux_Generator = document.getElementById("btn__enviar");
@@ -31,7 +32,10 @@ btnAux_Generator.addEventListener('click', ()=>{
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
-        doc.text("Cancelado el: "+ fechahora(), 10, 30);
+        const datetime = fechahora();
+        console.log(datetime)
+
+        doc.text("Cancelado el: "+ datetime(), 20, 30);
         doc.text("Comprobante de Pago - 8voA", 20, 20);
         doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 40);
         doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 50);
