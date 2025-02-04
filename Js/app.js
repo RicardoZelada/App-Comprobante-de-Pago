@@ -24,22 +24,22 @@ btnAux_Generator.addEventListener('click', ()=>{
 
     if(!name_Alumno || !act_Pago){
         alert("Ingrese los datos solicitados");
-    }
 
-    // Crear un nuevo documento PDF
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
+        console.log("Nombre del Alumno: " +name_Alumno);
+        console.log("Actividad Cancelada: " +act_Pago);
+    }else{
+        // Crear un nuevo documento PDF
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
 
-    doc.text("Comprobante de Pago - 8voA", 20, 20);
-    doc.text(`Nombre: ${name_Alumno}`, 20, 40);
-    doc.text(`Cancela: ${act_Pago}`, 20, 50);
+        doc.text("Comprobante de Pago - 8voA", 20, 20);
+        doc.text(`Nombre: ${name_Alumno}`, 20, 40);
+        doc.text(`Cancela: ${act_Pago}`, 20, 50);
 
-    // Guardar el PDF con un nombre dinámico
-    doc.save(`Formulario_${name_Alumno}.pdf`);
-    
-    console.log("Nombre del Alumno: " +name_Alumno);
-    console.log("Actividad Cancelada: " +act_Pago);
-    });
+        // Guardar el PDF con un nombre dinámico
+        doc.save(`Formulario_${name_Alumno}.pdf`);
+    }   
+        });
 
     /*
     array_Error = [];
