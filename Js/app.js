@@ -11,8 +11,7 @@ function fechahora(){
         informacion.textContent = */
         return `${fecha} - ${date}`;
     }
-    /*fechahora();
-    setInterval(fechahora, 1000);*/
+    setInterval(fechahora, 1000);
 
 
 const btnAux_Generator = document.getElementById("btn__enviar");
@@ -35,7 +34,7 @@ btnAux_Generator.addEventListener('click', ()=>{
         const datetime = fechahora();
         console.log(datetime)
 
-        doc.text("Cancelado el: "+ datetime(), 20, 30);
+        doc.text("Cancelado el: "+ datetime, 20, 30);
         doc.text("Comprobante de Pago - 8voA", 20, 20);
         doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 40);
         doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 50);
