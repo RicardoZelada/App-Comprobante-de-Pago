@@ -14,8 +14,6 @@ function fechahora(){
     setInterval(fechahora, 1000);
 
 
-window.registro = [];
-
 const btnAux_Generator = document.getElementById("btn__enviar");
 
 btnAux_Generator.addEventListener('click', ()=>{
@@ -32,12 +30,14 @@ btnAux_Generator.addEventListener('click', ()=>{
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
+        doc.text("Cancelado el: "+ fechahora());
         doc.text("Comprobante de Pago - 8voA", 20, 20);
-        doc.text(`Nombre: ${name_Alumno}`, 20, 40);
-        doc.text(`Cancela: ${act_Pago}`, 20, 50);
+        doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 40);
+        doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 50);
+
 
         // Guardar el PDF con un nombre dinámico
-        doc.save(`Formulario_${name_Alumno}.pdf`);
+        doc.save(`Comprobante de Pago_${name_Alumno}.pdf`);
     }   
         });
 
