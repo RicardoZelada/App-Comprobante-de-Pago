@@ -35,7 +35,7 @@ btnAux_Generator.addEventListener('click', ()=>{
     doc.text(`Cancela: ${act_Pago}`, 20, 50);
 
     // Guardar el PDF con un nombre dinámico
-    doc.save(`Formulario_${nombre}.pdf`);
+    doc.save(`Formulario_${name_Alumno}.pdf`);
     
     console.log("Nombre del Alumno: " +name_Alumno);
     console.log("Actividad Cancelada: " +act_Pago);
