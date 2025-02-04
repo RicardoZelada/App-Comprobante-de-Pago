@@ -6,11 +6,11 @@ function fechahora(){
         const fecha = hoy.toLocaleDateString('es-ES', options);
         const date = hoy.toLocaleTimeString('es-ES', optionsdate);
 
-        /*let informacion = document.querySelector(".date-time");
+        let informacion = document.querySelector(".date-time");
         informacion.classList.add("text-center","p-2","text-danger");
-        informacion.textContent = */
-        return `${fecha} - ${date}`;
+        informacion.textContent = `${fecha} - ${date}`;
     }
+    fechahora();
     setInterval(fechahora, 1000);
 
 
