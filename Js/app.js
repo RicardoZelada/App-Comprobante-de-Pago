@@ -23,9 +23,10 @@ btnAux_Generator.addEventListener('click', ()=>{
     if(!name_Alumno || !act_Pago){
         alert("Ingrese los datos solicitados");
 
+    }else{
         console.log("Nombre del Alumno: " +name_Alumno);
         console.log("Actividad Cancelada: " +act_Pago);
-    }else{
+
         // Crear un nuevo documento PDF
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
