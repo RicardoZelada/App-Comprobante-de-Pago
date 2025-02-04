@@ -37,15 +37,7 @@ btnAux_Generator.addEventListener('click', ()=>{
 
         doc.setFont("Roboto", "bold");
         doc.setFontSize(16);
-        
-        const title = "Comprobante de Pago - 8voA";
-        const pageWidth = doc.internal.pageSize.getWidth();  // Obtener el ancho de la página
-        const textWidth = doc.getTextWidth(title);  // Obtener el ancho del texto
-        const x = (pageWidth - textWidth) / 2;  // Calcular la posición para centrar el texto
-        const y = 30;
-
-        doc.text(title, x, y);
-
+        doc.text("Comprobante de Pago - 8voA");
 
         doc.setFont("Roboto", "normal");
         doc.setFontSize(12);
