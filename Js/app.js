@@ -35,7 +35,7 @@ btnAux_Generator.addEventListener('click', ()=>{
 
         // Crear un nuevo documento PDF
         const { jsPDF } = window.jspdf;
-        const doc = new jsPDF('p','mm','carta');
+        const doc = new jsPDF();
 
         doc.text("Comprobante de Pago - 8voA", 20, 20);
 
