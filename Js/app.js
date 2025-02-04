@@ -37,7 +37,7 @@ btnAux_Generator.addEventListener('click', ()=>{
 
         doc.setFont("Roboto", "bold");
         doc.setFontSize(16);
-        doc.text("Comprobante de Pago - 8voA");
+        doc.text("Comprobante de Pago - 8voA", 20, 20, "center");
 
         doc.setFont("Roboto", "normal");
         doc.setFontSize(12);
