@@ -20,13 +20,15 @@ const btnAux_Generator = document.getElementById("btn__enviar");
 btnAux_Generator.addEventListener('click', ()=>{
     let name_Alumno = document.querySelector(".alumno").value.trim();
     let act_Pago = document.querySelector(".pago").value.trim();
+    let monto = document.querySelector(".monto").value.trim();
 
-    if(!name_Alumno || !act_Pago){
+    if(!name_Alumno || !act_Pago || !monto){
         alert("Ingrese los datos solicitados");
 
     }else{
         console.log("Nombre del Alumno: " +name_Alumno);
         console.log("Actividad Cancelada: " +act_Pago);
+        console.log("Monto a Pagar: " +monto);
 
         const datetime = fechahora(); //obtengo la fecha y hora de la funcion fechahora()
         console.log(datetime);
@@ -43,6 +45,7 @@ btnAux_Generator.addEventListener('click', ()=>{
         doc.setFontSize(12);
         doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 40);
         doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 50);
+        doc.text(`Monto Cancelado: ${monto}`, 20, 50);
 
         doc.setFontSize(10);
         doc.text("Cancelado el: " + datetime, 20, 30);
