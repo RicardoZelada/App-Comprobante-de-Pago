@@ -35,11 +35,11 @@ btnAux_Generator.addEventListener('click', ()=>{
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF('p','mm','carta');
 
-        doc.fontStyle("helvetica", "bold");
+        doc.setFont("helvetica", "bold");
         doc.setFontSize(16);
         doc.text("Comprobante de Pago - 8voA", 20, 20);
 
-        doc.fontStyle("helvetica", "normal");
+        doc.setFont("helvetica", "normal");
         doc.setFontSize(12);
         doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 40);
         doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 50);
