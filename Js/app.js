@@ -33,21 +33,35 @@ btnAux_Generator.addEventListener('click', ()=>{
         const datetime = fechahora(); //obtengo la fecha y hora de la funcion fechahora()
         console.log(datetime);
 
+        fetch("assets/firma.png")
+        .then(response => response.blob()) // Convertir a Blob
+        .then(blob => {
+        
         // Crear un nuevo documento PDF
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
-
-        const imagenData = "data:firma/png;base64"
-
-        doc.text("Comprobante de Pago - 8voA", 70, 20);
-        doc.text("Cancelado el: " + datetime, 20, 40);
-        doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 50);
-        doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 60);
-        doc.text(`Monto Cancelado: $${monto}`, 20, 70);
-        doc.addImage(imagenData, "PNG",10,10,100,50);
-
-    
-        // Guardar el PDF con un nombre dinámico
-        doc.save(`Comprobante de Pago_${name_Alumno}.pdf`);
+        const reader = new FileReader();
+        
+        reader.onloadend = function () {
+            const imgData = reader.result; // Convertido a Base64
+            doc.text("Comprobante de Pago - 8voA", 70, 20);
+            doc.text("Cancelado el: " + datetime, 20, 40);
+            doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 50);
+            doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 60);
+            doc.text(`Monto Cancelado: $${monto}`, 20, 70);
+            doc.addImage(imgData, "PNG", 10, 10, 100, 50);
+            // Guardar el PDF con un nombre dinámico
+            doc.save(`Comprobante de Pago_${name_Alumno}.pdf`);
+          };
+          
+          reader.readAsDataURL(blob); // Convertir Blob a Base64
+        })
+        .catch(error => console.error("Error cargando la imagen:", error));
     }   
         });
+
+
+        
+  
+    
+   
