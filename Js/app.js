@@ -43,6 +43,7 @@ btnAux_Generator.addEventListener('click', ()=>{
           }
           
           async function generarPDF() {
+            const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
           
             const img1 = await LoadImg("assets/colegio.png");
