@@ -37,11 +37,11 @@ btnAux_Generator.addEventListener('click', ()=>{
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
-        doc.text("Comprobante de Pago - 8voA", 20, 20);
-        doc.text("Cancelado el: " + datetime, 20, 30);
-        doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 40);
-        doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 50);
-        doc.text(`Monto Cancelado: ${monto}`, 20, 60);
+        doc.text("Comprobante de Pago - 8voA", 50, 20);
+        doc.text("Cancelado el: " + datetime, 20, 40);
+        doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 50);
+        doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 60);
+        doc.text(`Monto Cancelado: ${monto}`, 20, 70);
 
     
         // Guardar el PDF con un nombre dinámico
