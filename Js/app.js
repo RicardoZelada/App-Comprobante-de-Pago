@@ -57,7 +57,7 @@ btnAux_Generator.addEventListener('click', ()=>{
             doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 70);
             doc.text(`Monto Cancelado: $${monto}`, 20, 80);
             doc.addImage(img1, "PNG", 20, 10, 25, 10);
-            doc.addImage(img2, "PNG", 130, 65, 50, 30);
+            doc.addImage(img2, "PNG", 130, 75, 50, 30);
             doc.setFontSize(12);
             doc.text("Directiva 8vo A - Colegio Arturo Edwards",120,105);
           
