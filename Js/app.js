@@ -53,7 +53,7 @@ btnAux_Generator.addEventListener('click', ()=>{
             doc.text(`Monto Cancelado: $${monto}`, 20, 70);
             doc.addImage(imgData, "PNG", 130, 65, 50, 30);
             doc.setFontSize(12);
-            doc.text("Directiva 8vo A - Colegio Arturo Edwards",110,90);
+            doc.text("Directiva 8vo A - Colegio Arturo Edwards",120,95);
             // Guardar el PDF con un nombre dinámico
             doc.save(`Comprobante de Pago_${name_Alumno}.pdf`);
           };
