@@ -46,7 +46,7 @@ btnAux_Generator.addEventListener('click', ()=>{
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
           
-            const img1 = await LoadImg("assets/colegio.png");
+            const img1 = await LoadImg("assets/Colegio.png");
             const img2 = await LoadImg("assets/firma.png");
           
             doc.setFontSize(18);
