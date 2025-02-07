@@ -24,7 +24,6 @@ btnAux_Generator.addEventListener('click', ()=>{
 
     if(!name_Alumno || !act_Pago || !monto){
         alert("Ingrese los datos solicitados");
-
     }else{
         console.log("Nombre del Alumno: " +name_Alumno);
         console.log("Actividad Cancelada: " +act_Pago);
@@ -33,17 +32,22 @@ btnAux_Generator.addEventListener('click', ()=>{
         const datetime = fechahora(); //obtengo la fecha y hora de la funcion fechahora()
         console.log(datetime);
 
-        fetch("assets/firma.png")
-        .then(response => response.blob()) // Convertir a Blob
-        .then(blob => {
-        
-        // Crear un nuevo documento PDF
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-        const reader = new FileReader();
-        
-        reader.onloadend = function () {
-            const imgData = reader.result; // Convertido a Base64
+        async function LoadImg(url) {
+            const response = await fetch(url);
+            const blob = await response.blob();
+            return new Promise((resolve) => {
+              const reader = new FileReader();
+              reader.onloadend = () => resolve(reader.result); // Convertir a Base64
+              reader.readAsDataURL(blob);
+            });
+          }
+          
+          async function generarPDF() {
+            const doc = new jsPDF();
+          
+            const img1 = await LoadImg("assets/colegio.png");
+            const img2 = await LoadImg("assets/firma.png");
+          
             doc.setFontSize(18);
             doc.text("Comprobante de Pago - 8voA", 65, 20);
             doc.setFontSize(14);
@@ -51,16 +55,18 @@ btnAux_Generator.addEventListener('click', ()=>{
             doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 50);
             doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 60);
             doc.text(`Monto Cancelado: $${monto}`, 20, 70);
-            doc.addImage(imgData, "PNG", 130, 65, 50, 30);
+            doc.addImage(img1, "PNG", 10, 10, 50, 50);
+            doc.addImage(img2, "PNG", 70, 10, 50, 50);
             doc.setFontSize(12);
             doc.text("Directiva 8vo A - Colegio Arturo Edwards",120,95);
+          
             // Guardar el PDF con un nombre dinámico
             doc.save(`Comprobante de Pago_${name_Alumno}.pdf`);
-          };
+          }
           
-          reader.readAsDataURL(blob); // Convertir Blob a Base64
-        })
-        .catch(error => console.error("Error cargando la imagen:", error));
+          generarPDF();
+          
+        
     }   
         });
 
