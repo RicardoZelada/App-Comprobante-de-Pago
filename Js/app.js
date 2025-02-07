@@ -50,16 +50,16 @@ btnAux_Generator.addEventListener('click', ()=>{
             const img2 = await LoadImg("assets/firma.png");
           
             doc.setFontSize(18);
-            doc.text("Comprobante de Pago - 8voA", 65, 20);
+            doc.text("Comprobante de Pago - 8voA", 65, 30);
             doc.setFontSize(14);
-            doc.text("Cancelado el: " + datetime, 20, 40);
-            doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 50);
-            doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 60);
-            doc.text(`Monto Cancelado: $${monto}`, 20, 70);
-            doc.addImage(img1, "PNG", 10, 10, 50, 25);
+            doc.text("Cancelado el: " + datetime, 20, 50);
+            doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 60);
+            doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 70);
+            doc.text(`Monto Cancelado: $${monto}`, 20, 80);
+            doc.addImage(img1, "PNG", 10, 10, 30, 15);
             doc.addImage(img2, "PNG", 130, 65, 50, 30);
             doc.setFontSize(12);
-            doc.text("Directiva 8vo A - Colegio Arturo Edwards",120,95);
+            doc.text("Directiva 8vo A - Colegio Arturo Edwards",120,105);
           
             // Guardar el PDF con un nombre dinámico
             doc.save(`Comprobante de Pago_${name_Alumno}.pdf`);
