@@ -49,7 +49,7 @@ btnAux_Generator.addEventListener('click', ()=>{
             doc.text(`Nombre del Alumno: ${name_Alumno}`, 20, 50);
             doc.text(`Actividad a Cancelar: ${act_Pago}`, 20, 60);
             doc.text(`Monto Cancelado: $${monto}`, 20, 70);
-            doc.addImage(imgData, "PNG", 10, 10, 100, 50);
+            doc.addImage(imgData, "PNG", 80, 100, 50, 30);
             // Guardar el PDF con un nombre dinámico
             doc.save(`Comprobante de Pago_${name_Alumno}.pdf`);
           };
